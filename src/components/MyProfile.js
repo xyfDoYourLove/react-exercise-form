@@ -48,7 +48,8 @@ class MyProfile extends Component {
         <label htmlFor='name'>Name</label>
         <br />
         <input 
-          type='text' 
+          type='text'
+          size='25'
           id='name' 
           value={this.state.name} 
           onChange={this.handleNameChange}
@@ -61,7 +62,7 @@ class MyProfile extends Component {
       <div>
         <label htmlFor='gender'>Gender</label>
         <br />
-        <select value={this.state.gender} name="gender" id="gender" onChange={this.handleGenderChange}>
+        <select style={{width:220}} value={this.state.gender} name="gender" id="gender" onChange={this.handleGenderChange}>
           <option value="male">male</option>
           <option value="famale">famale</option>
         </select>
@@ -73,7 +74,8 @@ class MyProfile extends Component {
         <label htmlFor='description'>Description</label>
         <br />
         <textarea 
-          value={this.state.description} 
+          style={{width:220}}
+          value={this.state.description}
           id='description' 
           name='description' 
           onChange={this.handleDescriptionChange} 
@@ -85,7 +87,7 @@ class MyProfile extends Component {
     const confirm = (
       <div>
         <label>
-          <input type="radio" value='confrim' id='confirm' name='confirm' onChange={this.handleConfirmChange}></input>
+          <input type="checkbox" checked={this.state.confirm} id='confirm' name='confirm' onChange={this.handleConfirmChange}></input>
           i have read the terms of conduct
         </label>
       </div>
@@ -103,7 +105,7 @@ class MyProfile extends Component {
     );
 
     return (
-      <form>
+      <form className='app'>
         <br />
         {title}
         <br />
